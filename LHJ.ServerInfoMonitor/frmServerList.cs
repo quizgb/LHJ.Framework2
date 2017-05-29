@@ -318,7 +318,6 @@ namespace LHJ.ServerInfoMonitor
                 this.btnInit.PerformClick();
             }
         }
-        #endregion 7.Event
 
         private void lvwServer_DoubleClick(object sender, EventArgs e)
         {
@@ -357,5 +356,6 @@ namespace LHJ.ServerInfoMonitor
                 MessageBox.Show(this, "Ping을 보내지 못했습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        #endregion 7.Event
     }
 }
