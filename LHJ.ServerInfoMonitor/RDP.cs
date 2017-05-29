@@ -146,10 +146,15 @@ namespace LHJ.ServerInfoMonitor
             set
             {
                 IMsRdpClientAdvancedSettings advancedSettings = (IMsRdpClientAdvancedSettings)this.AdvancedSettings;
+
                 if (value)
+                {
                     advancedSettings.ContainerHandledFullScreen = 1;
+                }
                 else
+                {
                     advancedSettings.ContainerHandledFullScreen = 0;
+                }
             }
         }
 
