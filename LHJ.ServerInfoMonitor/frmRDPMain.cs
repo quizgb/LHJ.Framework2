@@ -252,6 +252,13 @@ namespace LHJ.ServerInfoMonitor
             if (r.Contains(p))
             {
                 TabPage TabP = (TabPage)tc.TabPages[tc.SelectedIndex];
+
+                if (TabP.Controls[0] is LHJ.ServerInfoMonitor.RDP)
+                {
+                    LHJ.ServerInfoMonitor.RDP _RDP = TabP.Controls[0] as LHJ.ServerInfoMonitor.RDP;
+                    _RDP.Disconnect();
+                }
+
                 tc.TabPages.Remove(TabP);
             }
         }
