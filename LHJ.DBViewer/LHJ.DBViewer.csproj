@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1D17C25-599B-4B31-9B5F-B7024D951149}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LHJ.DBViewer</RootNamespace>
+    <AssemblyName>LHJ.DBViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DBViewer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Compile\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\1464082634_033.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LHJ.Common">
+      <HintPath>..\Compile\LHJ.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LHJ.Controls">
+      <HintPath>..\Compile\LHJ.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LHJ.DBService">
+      <HintPath>..\Compile\LHJ.DBService.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <HintPath>..\..\..\..\..\..\oracle\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsRichDDLBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DALDataAccess.cs" />
+    <Compile Include="frmDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDescription.Designer.cs">
+      <DependentUpon>frmDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSchemaBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSchemaBrowser.Designer.cs">
+      <DependentUpon>frmSchemaBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSessionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSessionView.Designer.cs">
+      <DependentUpon>frmSessionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSQLWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSQLWindow.Designer.cs">
+      <DependentUpon>frmSQLWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTableSpaceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTableSpaceView.Designer.cs">
+      <DependentUpon>frmTableSpaceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucDgvQuery.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ucObejct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucObejct.Designer.cs">
+      <DependentUpon>ucObejct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucObject2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucObject2.Designer.cs">
+      <DependentUpon>ucObject2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucQuery.Designer.cs">
+      <DependentUpon>ucQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucUserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUserList.Designer.cs">
+      <DependentUpon>ucUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucObjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucObjectList.Designer.cs">
+      <DependentUpon>ucObjectList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDescription.resx">
+      <DependentUpon>frmDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSchemaBrowser.resx">
+      <DependentUpon>frmSchemaBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSessionView.resx">
+      <DependentUpon>frmSessionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSQLWindow.resx">
+      <DependentUpon>frmSQLWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTableSpaceView.resx">
+      <DependentUpon>frmTableSpaceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ucObejct.resx">
+      <DependentUpon>ucObejct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucObject2.resx">
+      <DependentUpon>ucObject2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucObjectList.resx">
+      <DependentUpon>ucObjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucQuery.resx">
+      <DependentUpon>ucQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUserList.resx">
+      <DependentUpon>ucUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464082634_033.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464083802_key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464092745_old-view-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464171443_computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464171551_server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464171549_browser_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464171733_computer_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464172718_play-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464172705_More.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464172710_Less.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464175446_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464334475_check-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1464334516_cancel.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

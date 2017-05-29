@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D42DAB53-4EF0-450A-BCE2-CA705AE5CD43}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LHJ.NaverSearch</RootNamespace>
+    <AssemblyName>LHJ.NaverSearch</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Compile\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\1483694358_naver.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Book\BookSearchRslt.cs" />
+    <Compile Include="Book\BookControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Book\BookControl.Designer.cs">
+      <DependentUpon>BookControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\BookSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book\BookSearch.Designer.cs">
+      <DependentUpon>BookSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\RichLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Definition\ConstValue\ConstValue.cs" />
+    <Compile Include="Book\BookItem.cs" />
+    <Compile Include="IBookSearch.cs" />
+    <Compile Include="KnowIn\KIItem.cs" />
+    <Compile Include="KnowIn\KISearchRslt.cs" />
+    <Compile Include="KnowIn\KnowInSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KnowIn\KnowInSearch.Designer.cs">
+      <DependentUpon>KnowInSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KnowIn\KnowInControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KnowIn\KnowInControl.Designer.cs">
+      <DependentUpon>KnowInControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie\MovieControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Movie\MovieControl.Designer.cs">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movie\MovieItem.cs" />
+    <Compile Include="Movie\MovieSearchRslt.cs" />
+    <Compile Include="Movie\MovieSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movie\MovieSearch.Designer.cs">
+      <DependentUpon>MovieSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shopping\ShopControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shopping\ShopControl.Designer.cs">
+      <DependentUpon>ShopControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shopping\ShopItem.cs" />
+    <Compile Include="Shopping\ShopSearchRslt.cs" />
+    <Compile Include="Shopping\ShopSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shopping\ShopSearch.Designer.cs">
+      <DependentUpon>ShopSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPaging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPaging.Designer.cs">
+      <DependentUpon>ucPaging.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Book\BookControl.resx">
+      <DependentUpon>BookControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book\BookSearch.resx">
+      <DependentUpon>BookSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KnowIn\KnowInSearch.resx">
+      <DependentUpon>KnowInSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KnowIn\KnowInControl.resx">
+      <DependentUpon>KnowInControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie\MovieControl.resx">
+      <DependentUpon>MovieControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movie\MovieSearch.resx">
+      <DependentUpon>MovieSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Shopping\ShopControl.resx">
+      <DependentUpon>ShopControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shopping\ShopSearch.resx">
+      <DependentUpon>ShopSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPaging.resx">
+      <DependentUpon>ucPaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Newtonsoft.Json.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1483687921_LIBRARY_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1483694295_video.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1483694358_naver.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1483702636_shopping-cart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1483945068_square-linkedin.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
