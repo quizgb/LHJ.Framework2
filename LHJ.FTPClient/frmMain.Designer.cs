@@ -63,12 +63,12 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.shellComboBox1 = new GongSolutions.Shell.ShellComboBox();
-            this.shellComboBox2 = new GongSolutions.Shell.ShellComboBox();
             this.shellTreeView1 = new GongSolutions.Shell.ShellTreeView();
-            this.shellTreeView2 = new GongSolutions.Shell.ShellTreeView();
+            this.shellComboBox1 = new GongSolutions.Shell.ShellComboBox();
             this.shellView1 = new GongSolutions.Shell.ShellView();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.shellTreeView2 = new GongSolutions.Shell.ShellTreeView();
+            this.shellComboBox2 = new GongSolutions.Shell.ShellComboBox();
             this.shellView2 = new GongSolutions.Shell.ShellView();
             this.mnsMain.SuspendLayout();
             this.tsMain.SuspendLayout();
@@ -378,6 +378,36 @@
             this.splitContainer4.SplitterDistance = 211;
             this.splitContainer4.TabIndex = 0;
             // 
+            // shellTreeView1
+            // 
+            this.shellTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellTreeView1.Location = new System.Drawing.Point(0, 23);
+            this.shellTreeView1.Name = "shellTreeView1";
+            this.shellTreeView1.ShellView = this.shellView1;
+            this.shellTreeView1.Size = new System.Drawing.Size(634, 188);
+            this.shellTreeView1.TabIndex = 1;
+            // 
+            // shellComboBox1
+            // 
+            this.shellComboBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.shellComboBox1.Location = new System.Drawing.Point(0, 0);
+            this.shellComboBox1.Name = "shellComboBox1";
+            this.shellComboBox1.ShellView = this.shellView1;
+            this.shellComboBox1.Size = new System.Drawing.Size(634, 23);
+            this.shellComboBox1.TabIndex = 0;
+            this.shellComboBox1.Text = "shellComboBox1";
+            // 
+            // shellView1
+            // 
+            this.shellView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellView1.Location = new System.Drawing.Point(0, 0);
+            this.shellView1.Name = "shellView1";
+            this.shellView1.Size = new System.Drawing.Size(634, 278);
+            this.shellView1.StatusBar = null;
+            this.shellView1.TabIndex = 0;
+            this.shellView1.Text = "shellView1";
+            this.shellView1.View = GongSolutions.Shell.ShellViewStyle.Details;
+            // 
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -397,50 +427,24 @@
             this.splitContainer5.SplitterDistance = 211;
             this.splitContainer5.TabIndex = 1;
             // 
-            // shellComboBox1
+            // shellTreeView2
             // 
-            this.shellComboBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.shellComboBox1.Location = new System.Drawing.Point(0, 0);
-            this.shellComboBox1.Name = "shellComboBox1";
-            this.shellComboBox1.Size = new System.Drawing.Size(634, 23);
-            this.shellComboBox1.TabIndex = 0;
-            this.shellComboBox1.Text = "shellComboBox1";
+            this.shellTreeView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellTreeView2.Location = new System.Drawing.Point(0, 23);
+            this.shellTreeView2.Name = "shellTreeView2";
+            this.shellTreeView2.ShellView = this.shellView2;
+            this.shellTreeView2.Size = new System.Drawing.Size(626, 188);
+            this.shellTreeView2.TabIndex = 2;
             // 
             // shellComboBox2
             // 
             this.shellComboBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.shellComboBox2.Location = new System.Drawing.Point(0, 0);
             this.shellComboBox2.Name = "shellComboBox2";
+            this.shellComboBox2.ShellView = this.shellView2;
             this.shellComboBox2.Size = new System.Drawing.Size(626, 23);
             this.shellComboBox2.TabIndex = 1;
             this.shellComboBox2.Text = "shellComboBox2";
-            // 
-            // shellTreeView1
-            // 
-            this.shellTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellTreeView1.Location = new System.Drawing.Point(0, 23);
-            this.shellTreeView1.Name = "shellTreeView1";
-            this.shellTreeView1.Size = new System.Drawing.Size(634, 188);
-            this.shellTreeView1.TabIndex = 1;
-            // 
-            // shellTreeView2
-            // 
-            this.shellTreeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellTreeView2.Location = new System.Drawing.Point(0, 23);
-            this.shellTreeView2.Name = "shellTreeView2";
-            this.shellTreeView2.Size = new System.Drawing.Size(626, 188);
-            this.shellTreeView2.TabIndex = 2;
-            // 
-            // shellView1
-            // 
-            this.shellView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellView1.Location = new System.Drawing.Point(0, 0);
-            this.shellView1.Name = "shellView1";
-            this.shellView1.Size = new System.Drawing.Size(634, 278);
-            this.shellView1.StatusBar = null;
-            this.shellView1.TabIndex = 0;
-            this.shellView1.Text = "shellView1";
-            this.shellView1.View = GongSolutions.Shell.ShellViewStyle.Details;
             // 
             // shellView2
             // 
