@@ -59,5 +59,25 @@ namespace LHJ.FTPClient.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   (아이콘)과(와) 유사한 System.Drawing.Icon 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Icon _1496929034_Location_FTP {
+            get {
+                object obj = ResourceManager.GetObject("_1496929034_Location_FTP", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496929365_knetworkconf {
+            get {
+                object obj = ResourceManager.GetObject("_1496929365_knetworkconf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

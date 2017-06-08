@@ -64,12 +64,14 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.shellTreeView1 = new GongSolutions.Shell.ShellTreeView();
-            this.shellComboBox1 = new GongSolutions.Shell.ShellComboBox();
             this.shellView1 = new GongSolutions.Shell.ShellView();
+            this.shellComboBox1 = new GongSolutions.Shell.ShellComboBox();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.shellTreeView2 = new GongSolutions.Shell.ShellTreeView();
-            this.shellComboBox2 = new GongSolutions.Shell.ShellComboBox();
             this.shellView2 = new GongSolutions.Shell.ShellView();
+            this.shellComboBox2 = new GongSolutions.Shell.ShellComboBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsslLastBulidDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.mnsMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -91,6 +93,7 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnsMain
@@ -307,7 +310,7 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(1264, 76);
+            this.textBox1.Size = new System.Drawing.Size(1264, 72);
             this.textBox1.TabIndex = 16;
             // 
             // splitContainer1
@@ -324,8 +327,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1264, 713);
-            this.splitContainer1.SplitterDistance = 76;
+            this.splitContainer1.Size = new System.Drawing.Size(1264, 689);
+            this.splitContainer1.SplitterDistance = 72;
             this.splitContainer1.TabIndex = 17;
             // 
             // splitContainer2
@@ -338,8 +341,8 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1264, 633);
-            this.splitContainer2.SplitterDistance = 493;
+            this.splitContainer2.Size = new System.Drawing.Size(1264, 613);
+            this.splitContainer2.SplitterDistance = 476;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -355,7 +358,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(1264, 493);
+            this.splitContainer3.Size = new System.Drawing.Size(1264, 476);
             this.splitContainer3.SplitterDistance = 634;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -374,8 +377,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.shellView1);
-            this.splitContainer4.Size = new System.Drawing.Size(634, 493);
-            this.splitContainer4.SplitterDistance = 211;
+            this.splitContainer4.Size = new System.Drawing.Size(634, 476);
+            this.splitContainer4.SplitterDistance = 203;
             this.splitContainer4.TabIndex = 0;
             // 
             // shellTreeView1
@@ -384,8 +387,19 @@
             this.shellTreeView1.Location = new System.Drawing.Point(0, 23);
             this.shellTreeView1.Name = "shellTreeView1";
             this.shellTreeView1.ShellView = this.shellView1;
-            this.shellTreeView1.Size = new System.Drawing.Size(634, 188);
+            this.shellTreeView1.Size = new System.Drawing.Size(634, 180);
             this.shellTreeView1.TabIndex = 1;
+            // 
+            // shellView1
+            // 
+            this.shellView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellView1.Location = new System.Drawing.Point(0, 0);
+            this.shellView1.Name = "shellView1";
+            this.shellView1.Size = new System.Drawing.Size(634, 269);
+            this.shellView1.StatusBar = null;
+            this.shellView1.TabIndex = 0;
+            this.shellView1.Text = "shellView1";
+            this.shellView1.View = GongSolutions.Shell.ShellViewStyle.Details;
             // 
             // shellComboBox1
             // 
@@ -396,17 +410,6 @@
             this.shellComboBox1.Size = new System.Drawing.Size(634, 23);
             this.shellComboBox1.TabIndex = 0;
             this.shellComboBox1.Text = "shellComboBox1";
-            // 
-            // shellView1
-            // 
-            this.shellView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellView1.Location = new System.Drawing.Point(0, 0);
-            this.shellView1.Name = "shellView1";
-            this.shellView1.Size = new System.Drawing.Size(634, 278);
-            this.shellView1.StatusBar = null;
-            this.shellView1.TabIndex = 0;
-            this.shellView1.Text = "shellView1";
-            this.shellView1.View = GongSolutions.Shell.ShellViewStyle.Details;
             // 
             // splitContainer5
             // 
@@ -423,8 +426,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.shellView2);
-            this.splitContainer5.Size = new System.Drawing.Size(626, 493);
-            this.splitContainer5.SplitterDistance = 211;
+            this.splitContainer5.Size = new System.Drawing.Size(626, 476);
+            this.splitContainer5.SplitterDistance = 203;
             this.splitContainer5.TabIndex = 1;
             // 
             // shellTreeView2
@@ -433,8 +436,19 @@
             this.shellTreeView2.Location = new System.Drawing.Point(0, 23);
             this.shellTreeView2.Name = "shellTreeView2";
             this.shellTreeView2.ShellView = this.shellView2;
-            this.shellTreeView2.Size = new System.Drawing.Size(626, 188);
+            this.shellTreeView2.Size = new System.Drawing.Size(626, 180);
             this.shellTreeView2.TabIndex = 2;
+            // 
+            // shellView2
+            // 
+            this.shellView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.shellView2.Location = new System.Drawing.Point(0, 0);
+            this.shellView2.Name = "shellView2";
+            this.shellView2.Size = new System.Drawing.Size(626, 269);
+            this.shellView2.StatusBar = null;
+            this.shellView2.TabIndex = 0;
+            this.shellView2.Text = "shellView2";
+            this.shellView2.View = GongSolutions.Shell.ShellViewStyle.Details;
             // 
             // shellComboBox2
             // 
@@ -446,22 +460,34 @@
             this.shellComboBox2.TabIndex = 1;
             this.shellComboBox2.Text = "shellComboBox2";
             // 
-            // shellView2
+            // statusStrip1
             // 
-            this.shellView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellView2.Location = new System.Drawing.Point(0, 0);
-            this.shellView2.Name = "shellView2";
-            this.shellView2.Size = new System.Drawing.Size(626, 278);
-            this.shellView2.StatusBar = null;
-            this.shellView2.TabIndex = 0;
-            this.shellView2.Text = "shellView2";
-            this.shellView2.View = GongSolutions.Shell.ShellViewStyle.Details;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslLastBulidDate});
+            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 738);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.statusStrip1.TabIndex = 20;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsslLastBulidDate
+            // 
+            this.tsslLastBulidDate.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.tsslLastBulidDate.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.tsslLastBulidDate.Name = "tsslLastBulidDate";
+            this.tsslLastBulidDate.Size = new System.Drawing.Size(92, 19);
+            this.tsslLastBulidDate.Text = "(LastBulidDate)";
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1264, 762);
             this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.mnsMain);
             this.Name = "frmMain";
@@ -491,6 +517,8 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,6 +567,8 @@
         private GongSolutions.Shell.ShellView shellView1;
         private GongSolutions.Shell.ShellTreeView shellTreeView2;
         private GongSolutions.Shell.ShellView shellView2;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsslLastBulidDate;
     }
 }
 
