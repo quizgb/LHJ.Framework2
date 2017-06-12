@@ -36,6 +36,12 @@ namespace LHJ.Common
         {
             get { return m_Cryptography; }
         }
+
+        private static LHJ.Common.Common.Com.FTP.Ftp m_Ftp = new LHJ.Common.Common.Com.FTP.Ftp();
+        public static LHJ.Common.Common.Com.FTP.Ftp FTP
+        {
+            get { return m_Ftp; }
+        }
         #endregion 2.Property
 
 

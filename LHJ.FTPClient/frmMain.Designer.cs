@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConnect = new System.Windows.Forms.ToolStripMenuItem();
@@ -297,7 +296,7 @@
             // 
             // tsbConnect
             // 
-            this.tsbConnect.Image = ((System.Drawing.Image)(resources.GetObject("tsbConnect.Image")));
+            this.tsbConnect.Image = global::LHJ.FTPClient.Properties.Resources._1496929365_knetworkconf;
             this.tsbConnect.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbConnect.Name = "tsbConnect";
             this.tsbConnect.Size = new System.Drawing.Size(51, 22);
@@ -342,7 +341,7 @@
             // 
             this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
             this.splitContainer2.Size = new System.Drawing.Size(1264, 613);
-            this.splitContainer2.SplitterDistance = 476;
+            this.splitContainer2.SplitterDistance = 475;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -358,7 +357,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(1264, 476);
+            this.splitContainer3.Size = new System.Drawing.Size(1264, 475);
             this.splitContainer3.SplitterDistance = 634;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -377,8 +376,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.shellView1);
-            this.splitContainer4.Size = new System.Drawing.Size(634, 476);
-            this.splitContainer4.SplitterDistance = 203;
+            this.splitContainer4.Size = new System.Drawing.Size(634, 475);
+            this.splitContainer4.SplitterDistance = 202;
             this.splitContainer4.TabIndex = 0;
             // 
             // shellTreeView1
@@ -387,7 +386,7 @@
             this.shellTreeView1.Location = new System.Drawing.Point(0, 23);
             this.shellTreeView1.Name = "shellTreeView1";
             this.shellTreeView1.ShellView = this.shellView1;
-            this.shellTreeView1.Size = new System.Drawing.Size(634, 180);
+            this.shellTreeView1.Size = new System.Drawing.Size(634, 179);
             this.shellTreeView1.TabIndex = 1;
             // 
             // shellView1
@@ -426,8 +425,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.shellView2);
-            this.splitContainer5.Size = new System.Drawing.Size(626, 476);
-            this.splitContainer5.SplitterDistance = 203;
+            this.splitContainer5.Size = new System.Drawing.Size(626, 475);
+            this.splitContainer5.SplitterDistance = 202;
             this.splitContainer5.TabIndex = 1;
             // 
             // shellTreeView2
@@ -436,7 +435,7 @@
             this.shellTreeView2.Location = new System.Drawing.Point(0, 23);
             this.shellTreeView2.Name = "shellTreeView2";
             this.shellTreeView2.ShellView = this.shellView2;
-            this.shellTreeView2.Size = new System.Drawing.Size(626, 180);
+            this.shellTreeView2.Size = new System.Drawing.Size(626, 179);
             this.shellTreeView2.TabIndex = 2;
             // 
             // shellView2
