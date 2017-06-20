@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.fileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConnect = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,11 +67,12 @@
             this.shellView1 = new GongSolutions.Shell.ShellView();
             this.shellComboBox1 = new GongSolutions.Shell.ShellComboBox();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.shellTreeView2 = new GongSolutions.Shell.ShellTreeView();
-            this.shellView2 = new GongSolutions.Shell.ShellView();
-            this.shellComboBox2 = new GongSolutions.Shell.ShellComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslLastBulidDate = new System.Windows.Forms.ToolStripStatusLabel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.listView1 = new LHJ.FTPClient.DragAndDropListView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnsMain.SuspendLayout();
             this.tsMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -419,45 +421,15 @@
             // 
             // splitContainer5.Panel1
             // 
-            this.splitContainer5.Panel1.Controls.Add(this.shellTreeView2);
-            this.splitContainer5.Panel1.Controls.Add(this.shellComboBox2);
+            this.splitContainer5.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer5.Panel1.Controls.Add(this.comboBox1);
             // 
             // splitContainer5.Panel2
             // 
-            this.splitContainer5.Panel2.Controls.Add(this.shellView2);
+            this.splitContainer5.Panel2.Controls.Add(this.listView1);
             this.splitContainer5.Size = new System.Drawing.Size(626, 475);
             this.splitContainer5.SplitterDistance = 202;
             this.splitContainer5.TabIndex = 1;
-            // 
-            // shellTreeView2
-            // 
-            this.shellTreeView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellTreeView2.Location = new System.Drawing.Point(0, 23);
-            this.shellTreeView2.Name = "shellTreeView2";
-            this.shellTreeView2.ShellView = this.shellView2;
-            this.shellTreeView2.Size = new System.Drawing.Size(626, 179);
-            this.shellTreeView2.TabIndex = 2;
-            // 
-            // shellView2
-            // 
-            this.shellView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.shellView2.Location = new System.Drawing.Point(0, 0);
-            this.shellView2.Name = "shellView2";
-            this.shellView2.Size = new System.Drawing.Size(626, 269);
-            this.shellView2.StatusBar = null;
-            this.shellView2.TabIndex = 0;
-            this.shellView2.Text = "shellView2";
-            this.shellView2.View = GongSolutions.Shell.ShellViewStyle.Details;
-            // 
-            // shellComboBox2
-            // 
-            this.shellComboBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.shellComboBox2.Location = new System.Drawing.Point(0, 0);
-            this.shellComboBox2.Name = "shellComboBox2";
-            this.shellComboBox2.ShellView = this.shellView2;
-            this.shellComboBox2.Size = new System.Drawing.Size(626, 23);
-            this.shellComboBox2.TabIndex = 1;
-            this.shellComboBox2.Text = "shellComboBox2";
             // 
             // statusStrip1
             // 
@@ -480,6 +452,41 @@
             this.tsslLastBulidDate.Name = "tsslLastBulidDate";
             this.tsslLastBulidDate.Size = new System.Drawing.Size(92, 19);
             this.tsslLastBulidDate.Text = "(LastBulidDate)";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(626, 20);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 20);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(626, 182);
+            this.treeView1.TabIndex = 1;
+            this.treeView1.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterCollapse);
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand);
+            // 
+            // listView1
+            // 
+            this.listView1.AllowDrag = true;
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(626, 269);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.listView1_AfterLabelEdit);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // frmMain
             // 
@@ -561,13 +568,14 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.SplitContainer splitContainer5;
         private GongSolutions.Shell.ShellComboBox shellComboBox1;
-        private GongSolutions.Shell.ShellComboBox shellComboBox2;
         private GongSolutions.Shell.ShellTreeView shellTreeView1;
         private GongSolutions.Shell.ShellView shellView1;
-        private GongSolutions.Shell.ShellTreeView shellTreeView2;
-        private GongSolutions.Shell.ShellView shellView2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel tsslLastBulidDate;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private DragAndDropListView listView1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
