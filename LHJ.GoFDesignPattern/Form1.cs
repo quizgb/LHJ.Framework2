@@ -18,19 +18,10 @@ namespace LHJ.GoFDesignPattern
             InitializeComponent();
         }
 
-        private void Singleton_Click(object sender, EventArgs e)
+        private void btnSingleton_Click(object sender, EventArgs e)
         {
-            Singleton s1 = Singleton.Instance();
-            Singleton s2 = Singleton.Instance();
-
-            if (s1 == s2)
-            {
-                MessageBox.Show("Objects are the same instance");
-            }
-            else
-            {
-                MessageBox.Show("Objects are the not same instance");
-            }
+            frmSingleton frm = new frmSingleton();
+            frm.Show();
         }
     }
 }

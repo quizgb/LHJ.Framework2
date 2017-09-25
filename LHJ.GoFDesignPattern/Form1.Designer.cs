@@ -39,16 +39,17 @@
             this.btnSingleton.TabIndex = 0;
             this.btnSingleton.Text = "Singleton";
             this.btnSingleton.UseVisualStyleBackColor = true;
-            this.btnSingleton.Click += new System.EventHandler(this.Singleton_Click);
+            this.btnSingleton.Click += new System.EventHandler(this.btnSingleton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 262);
+            this.ClientSize = new System.Drawing.Size(553, 268);
             this.Controls.Add(this.btnSingleton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "GOF Design Pattern";
             this.ResumeLayout(false);
 
         }
