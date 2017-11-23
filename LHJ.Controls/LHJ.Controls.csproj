@@ -98,6 +98,9 @@
     <Compile Include="ucProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ucProgressBar2.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">
