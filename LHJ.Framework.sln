@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.FTPClient", "LHJ.FTPCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.GoFDesignPattern", "LHJ.GoFDesignPattern\LHJ.GoFDesignPattern.csproj", "{F69D8244-147E-4D61-BCED-2D889B409B43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.SetPrjLocalCopyFalse", "LHJ.SetPrjLocalCopyFalse\LHJ.SetPrjLocalCopyFalse.csproj", "{003BCEC3-CB05-45B1-8400-849669D2A352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -196,6 +198,18 @@ Global
 		{F69D8244-147E-4D61-BCED-2D889B409B43}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F69D8244-147E-4D61-BCED-2D889B409B43}.Release|x86.ActiveCfg = Release|Any CPU
 		{F69D8244-147E-4D61-BCED-2D889B409B43}.Release|x86.Build.0 = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Debug|x86.Build.0 = Debug|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|x86.ActiveCfg = Release|Any CPU
+		{003BCEC3-CB05-45B1-8400-849669D2A352}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
