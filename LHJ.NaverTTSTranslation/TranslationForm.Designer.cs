@@ -33,20 +33,24 @@
             this.btnTranslation = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboTTSSource = new System.Windows.Forms.ComboBox();
+            this.trbTTSSource = new System.Windows.Forms.TrackBar();
             this.btnTTSSource = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboTTSTarget = new System.Windows.Forms.ComboBox();
+            this.trbTTSTarget = new System.Windows.Forms.TrackBar();
             this.btnTTSTarget = new System.Windows.Forms.Button();
             this.cboFromLanguage = new System.Windows.Forms.ComboBox();
             this.cboToLanguage = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.trbTTSSource = new System.Windows.Forms.TrackBar();
-            this.trbTTSTarget = new System.Windows.Forms.TrackBar();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rbtnNmt = new System.Windows.Forms.RadioButton();
+            this.rbtnSmt = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbTTSSource)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trbTTSTarget)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSource
@@ -84,7 +88,7 @@
             this.groupBox2.Controls.Add(this.cboTTSSource);
             this.groupBox2.Controls.Add(this.trbTTSSource);
             this.groupBox2.Controls.Add(this.btnTTSSource);
-            this.groupBox2.Location = new System.Drawing.Point(557, 78);
+            this.groupBox2.Location = new System.Drawing.Point(557, 115);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(190, 109);
             this.groupBox2.TabIndex = 3;
@@ -98,6 +102,16 @@
             this.cboTTSSource.Name = "cboTTSSource";
             this.cboTTSSource.Size = new System.Drawing.Size(178, 20);
             this.cboTTSSource.TabIndex = 1;
+            // 
+            // trbTTSSource
+            // 
+            this.trbTTSSource.LargeChange = 1;
+            this.trbTTSSource.Location = new System.Drawing.Point(6, 12);
+            this.trbTTSSource.Maximum = 5;
+            this.trbTTSSource.Minimum = -5;
+            this.trbTTSSource.Name = "trbTTSSource";
+            this.trbTTSSource.Size = new System.Drawing.Size(178, 45);
+            this.trbTTSSource.TabIndex = 6;
             // 
             // btnTTSSource
             // 
@@ -114,7 +128,7 @@
             this.groupBox3.Controls.Add(this.cboTTSTarget);
             this.groupBox3.Controls.Add(this.trbTTSTarget);
             this.groupBox3.Controls.Add(this.btnTTSTarget);
-            this.groupBox3.Location = new System.Drawing.Point(557, 188);
+            this.groupBox3.Location = new System.Drawing.Point(557, 225);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(190, 109);
             this.groupBox3.TabIndex = 4;
@@ -128,6 +142,16 @@
             this.cboTTSTarget.Name = "cboTTSTarget";
             this.cboTTSTarget.Size = new System.Drawing.Size(178, 20);
             this.cboTTSTarget.TabIndex = 2;
+            // 
+            // trbTTSTarget
+            // 
+            this.trbTTSTarget.LargeChange = 1;
+            this.trbTTSTarget.Location = new System.Drawing.Point(6, 12);
+            this.trbTTSTarget.Maximum = 5;
+            this.trbTTSTarget.Minimum = -5;
+            this.trbTTSTarget.Name = "trbTTSTarget";
+            this.trbTTSTarget.Size = new System.Drawing.Size(178, 45);
+            this.trbTTSTarget.TabIndex = 7;
             // 
             // btnTTSTarget
             // 
@@ -162,36 +186,49 @@
             this.groupBox1.Controls.Add(this.cboToLanguage);
             this.groupBox1.Controls.Add(this.cboFromLanguage);
             this.groupBox1.Controls.Add(this.btnTranslation);
-            this.groupBox1.Location = new System.Drawing.Point(557, 4);
+            this.groupBox1.Location = new System.Drawing.Point(557, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(190, 68);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // trbTTSSource
+            // panel1
             // 
-            this.trbTTSSource.LargeChange = 1;
-            this.trbTTSSource.Location = new System.Drawing.Point(6, 12);
-            this.trbTTSSource.Maximum = 5;
-            this.trbTTSSource.Minimum = -5;
-            this.trbTTSSource.Name = "trbTTSSource";
-            this.trbTTSSource.Size = new System.Drawing.Size(178, 45);
-            this.trbTTSSource.TabIndex = 6;
+            this.panel1.Controls.Add(this.rbtnSmt);
+            this.panel1.Controls.Add(this.rbtnNmt);
+            this.panel1.Location = new System.Drawing.Point(557, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(202, 23);
+            this.panel1.TabIndex = 5;
             // 
-            // trbTTSTarget
+            // rbtnNmt
             // 
-            this.trbTTSTarget.LargeChange = 1;
-            this.trbTTSTarget.Location = new System.Drawing.Point(6, 12);
-            this.trbTTSTarget.Maximum = 5;
-            this.trbTTSTarget.Minimum = -5;
-            this.trbTTSTarget.Name = "trbTTSTarget";
-            this.trbTTSTarget.Size = new System.Drawing.Size(178, 45);
-            this.trbTTSTarget.TabIndex = 7;
+            this.rbtnNmt.AutoSize = true;
+            this.rbtnNmt.Checked = true;
+            this.rbtnNmt.Location = new System.Drawing.Point(6, 4);
+            this.rbtnNmt.Name = "rbtnNmt";
+            this.rbtnNmt.Size = new System.Drawing.Size(91, 16);
+            this.rbtnNmt.TabIndex = 0;
+            this.rbtnNmt.TabStop = true;
+            this.rbtnNmt.Text = "파파고 NMT";
+            this.rbtnNmt.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSmt
+            // 
+            this.rbtnSmt.AutoSize = true;
+            this.rbtnSmt.Location = new System.Drawing.Point(103, 4);
+            this.rbtnSmt.Name = "rbtnSmt";
+            this.rbtnSmt.Size = new System.Drawing.Size(90, 16);
+            this.rbtnSmt.TabIndex = 1;
+            this.rbtnSmt.TabStop = true;
+            this.rbtnSmt.Text = "파파고 SMT";
+            this.rbtnSmt.UseVisualStyleBackColor = true;
             // 
             // TranslationForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(762, 341);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -202,11 +239,13 @@
             this.Text = "네이버 기계번역+음성합성";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trbTTSSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trbTTSSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trbTTSTarget)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,6 +267,9 @@
         private System.Windows.Forms.ComboBox cboTTSTarget;
         private System.Windows.Forms.TrackBar trbTTSSource;
         private System.Windows.Forms.TrackBar trbTTSTarget;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rbtnSmt;
+        private System.Windows.Forms.RadioButton rbtnNmt;
     }
 }
 

@@ -198,7 +198,17 @@ namespace LHJ.NaverTTSTranslation
 
         private string Translation(string aSource, string aTarget, string aText)
         {
-            string url = "https://openapi.naver.com/v1/language/translate";
+            string url = string.Empty;
+
+            if (this.rbtnNmt.Checked)
+            {
+                url = "https://openapi.naver.com/v1/papago/n2mt";
+            }
+            else
+            {
+                url = "https://openapi.naver.com/v1/language/translate";
+            }
+
             string text = string.Empty;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
