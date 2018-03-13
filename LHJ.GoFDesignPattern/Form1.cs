@@ -1,5 +1,4 @@
-﻿using LHJ.GoFDesignPattern.Creational;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +19,7 @@ namespace LHJ.GoFDesignPattern
 
         private void btnSingleton_Click(object sender, EventArgs e)
         {
-            frmSingleton frm = new frmSingleton();
+            LHJ.GoFDesignPattern.Creational.Singleton.frmSingleton frm = new LHJ.GoFDesignPattern.Creational.Singleton.frmSingleton();
             frm.Show();
         }
     }

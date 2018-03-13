@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LHJ.GoFDesignPattern.Creational
+namespace LHJ.GoFDesignPattern.Creational.Singleton
 {
     public partial class frmSingleton : Form
     {
@@ -30,6 +30,16 @@ namespace LHJ.GoFDesignPattern.Creational
             {
                 MessageBox.Show("Objects are the not same instance");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Singleton.Instance().ProjectInfo.GetProjectInfo();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Singleton.Instance().UserInfo.GetUserInfo();
         }
     }
 }
