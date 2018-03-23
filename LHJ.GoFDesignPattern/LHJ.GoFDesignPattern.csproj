@@ -64,16 +64,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creational\Factory Method\DBCheck\csDBCheck.cs" />
-    <Compile Include="Creational\Factory Method\DBCheck\csTable.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\CreateTable.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\Table.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\Factory.cs" />
     <Compile Include="Creational\Factory Method\frmFactoryMethod.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Creational\Factory Method\frmFactoryMethod.Designer.cs">
       <DependentUpon>frmFactoryMethod.cs</DependentUpon>
     </Compile>
-    <Compile Include="Creational\Factory Method\DBCheck\Table\COE_EXEC_ORD.cs" />
-    <Compile Include="Creational\Factory Method\DBCheck\Table\COE_PTNT_ORD.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\TableList\COE_EXEC_ORD.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\TableList\COE_PTNT_ORD.cs" />
     <Compile Include="Creational\Singleton\frmSingleton.cs">
       <SubType>Form</SubType>
     </Compile>

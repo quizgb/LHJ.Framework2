@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnSingleton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSingleton
@@ -41,11 +42,22 @@
             this.btnSingleton.UseVisualStyleBackColor = true;
             this.btnSingleton.Click += new System.EventHandler(this.btnSingleton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "FactoryMethod";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 268);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSingleton);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -57,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnSingleton;
+        private System.Windows.Forms.Button button1;
     }
 }
 

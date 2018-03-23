@@ -19,7 +19,7 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
 
         private void button1_Click(object sender, EventArgs e)
         {
-            csDBCheck dbChk = new csDBCheck();
+            CreateTable dbChk = new CreateTable();
         }
     }
 }

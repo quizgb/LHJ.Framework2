@@ -4,14 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.Table
+namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.TableList
 {
-    sealed class COE_PTNT_ORD : csTable
+    public class COE_PTNT_ORD : Table
     {
-        public COE_PTNT_ORD(ref bool ErrFlag)
+        public COE_PTNT_ORD()
             : base("COE_PTNT_ORD", "OCS")
         {
-            base.StepRun(ref ErrFlag);
+        }
+
+        public bool StepRun()
+        {
+            return base.StepRun();
         }
 
         protected override bool CreateTable()
@@ -86,9 +90,11 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.Table
             return ErrFlag;
         }
 
-        protected override void InitDataWork()
+        protected override bool InitDataWork()
         {
+            bool ErrFlag = true;
 
+            return ErrFlag;
         }
     }
 }

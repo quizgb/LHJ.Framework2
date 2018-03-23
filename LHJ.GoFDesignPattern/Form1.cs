@@ -22,5 +22,11 @@ namespace LHJ.GoFDesignPattern
             LHJ.GoFDesignPattern.Creational.Singleton.frmSingleton frm = new LHJ.GoFDesignPattern.Creational.Singleton.frmSingleton();
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.frmFactoryMethod frm = new LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.frmFactoryMethod();
+            frm.Show();
+        }
     }
 }

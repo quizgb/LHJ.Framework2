@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
 {
-    public abstract class csTable : System.IDisposable
+    public abstract class Table : System.IDisposable
     {
         protected string m_TableName = string.Empty;
         protected string m_TableSpaceName = string.Empty;
 
-        public csTable(string TableName, string TableSpaceHeader)
+        public Table(string TableName, string TableSpaceHeader)
         {
             this.m_TableName = TableName;
             this.m_TableSpaceName = TableSpaceHeader;
         }
 
-        ~csTable()
+        ~Table()
         {
             Dispose();
         }
@@ -28,13 +28,36 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
             this.m_TableSpaceName = string.Empty;
         }
 
-        protected void StepRun(ref bool ErrFlag)
+        public bool StepRun()
         {
-            if (ErrFlag) ErrFlag = CreateTable();
-            if (ErrFlag) ErrFlag = AddColumn();
-            if (ErrFlag) ErrFlag = AddComment();
-            if (ErrFlag) ErrFlag = AddIndex();
-            if (ErrFlag) InitDataWork(); 
+            bool flag = true;
+
+            if (flag)
+            {
+                flag &= CreateTable();
+            }
+
+            if (flag)
+            {
+                flag &= AddColumn();
+            }
+
+            if (flag)
+            {
+                flag &= AddComment();
+            }
+
+            if (flag)
+            {
+                flag &= AddIndex();
+            }
+
+            if (flag)
+            {
+                flag &= InitDataWork();
+            }
+
+            return flag;
         }
 
         protected abstract bool CreateTable();
@@ -45,7 +68,7 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
 
         protected abstract bool AddIndex();
 
-        protected abstract void InitDataWork();
+        protected abstract bool InitDataWork();
 
     }
 }
