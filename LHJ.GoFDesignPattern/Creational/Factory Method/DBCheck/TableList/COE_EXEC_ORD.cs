@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.TableList
 {
-    public class COE_EXEC_ORD : Table
+    public class COE_EXEC_ORD : TableBase
     {
         public COE_EXEC_ORD()
             : base("COE_EXEC_ORD", "OCS")

@@ -25,7 +25,7 @@ namespace LHJ.GoFDesignPattern
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.frmFactoryMethod frm = new LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.frmFactoryMethod();
+            LHJ.GoFDesignPattern.Creational.Factory_Method.frmFactoryMethod frm = new LHJ.GoFDesignPattern.Creational.Factory_Method.frmFactoryMethod();
             frm.Show();
         }
     }

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
 {
-    public abstract class Table : System.IDisposable
+    public abstract class TableBase : System.IDisposable
     {
         protected string m_TableName = string.Empty;
         protected string m_TableSpaceName = string.Empty;
 
-        public Table(string TableName, string TableSpaceHeader)
+        public TableBase(string TableName, string TableSpaceHeader)
         {
             this.m_TableName = TableName;
             this.m_TableSpaceName = TableSpaceHeader;
         }
 
-        ~Table()
+        ~TableBase()
         {
             Dispose();
         }

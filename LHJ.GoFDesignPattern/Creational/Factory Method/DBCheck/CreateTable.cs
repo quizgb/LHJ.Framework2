@@ -11,7 +11,7 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
         private Factory _DBFactory = new TableFactory();
         private List<string> _TableNameLIst = new List<string>();
 
-        private void CreateDataBaseLayout()
+        public void CreateDataBaseLayout()
         {
             bool flag = true;
 
@@ -46,8 +46,6 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
         public CreateTable()
         {
             this.SetInitialize();
-
-            this.CreateDataBaseLayout();
         }
     }
 }

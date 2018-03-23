@@ -8,12 +8,12 @@ namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck
 {
     public abstract class Factory
     {
-        public abstract Table CreateTable(string aTableName);
+        public abstract TableBase CreateTable(string aTableName);
     }
 
     public class TableFactory : Factory
     {
-        public override Table CreateTable(string aTableName)
+        public override TableBase CreateTable(string aTableName)
         {
             switch (aTableName)
             {

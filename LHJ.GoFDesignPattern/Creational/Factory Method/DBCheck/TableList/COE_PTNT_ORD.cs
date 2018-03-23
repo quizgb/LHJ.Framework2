@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LHJ.GoFDesignPattern.Creational.Factory_Method.DBCheck.TableList
 {
-    public class COE_PTNT_ORD : Table
+    public class COE_PTNT_ORD : TableBase
     {
         public COE_PTNT_ORD()
             : base("COE_PTNT_ORD", "OCS")

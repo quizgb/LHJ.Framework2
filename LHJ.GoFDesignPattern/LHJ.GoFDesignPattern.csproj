@@ -65,8 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Creational\Factory Method\DBCheck\CreateTable.cs" />
-    <Compile Include="Creational\Factory Method\DBCheck\Table.cs" />
-    <Compile Include="Creational\Factory Method\DBCheck\Factory.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\TableBase.cs" />
+    <Compile Include="Creational\Factory Method\DBCheck\TableFactory.cs" />
     <Compile Include="Creational\Factory Method\frmFactoryMethod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="Creational\Factory Method\DBCheck\TableList\COE_EXEC_ORD.cs" />
     <Compile Include="Creational\Factory Method\DBCheck\TableList\COE_PTNT_ORD.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\ConfigSignPad.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\SignPadBase.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\SignPadEnum.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\SignPadFactory.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\SignPadKis.cs" />
+    <Compile Include="Creational\Factory Method\SignPad\SignPadKoces.cs" />
     <Compile Include="Creational\Singleton\frmSingleton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behavioral\" />
-    <Folder Include="Creational\Factory Method\DBService\" />
     <Folder Include="Structural\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
