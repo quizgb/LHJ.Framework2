@@ -7,12 +7,16 @@ using Discord;
 using Discord.Commands;
 using Discord.Net.Providers.WS4Net;
 using Discord.WebSocket;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace LHJ.DiscordBot
 {
     public class Program
     {
-        private readonly DiscordSocketClient _client;
+        private CommandService _Commands;
+        private DiscordSocketClient _Client;
+        private CommandHandler _CmdHandler;
+        private IServiceProvider _Services;
 
         // Program entry point
         static void Main(string[] args)
@@ -24,10 +28,10 @@ namespace LHJ.DiscordBot
 
         private Program()
         {
-            this._client = new DiscordSocketClient(new DiscordSocketConfig
+            this._Client = new DiscordSocketClient(new DiscordSocketConfig
             {
                 // How much logging do you want to see?
-                LogLevel = LogSeverity.Info,
+                LogLevel = LogSeverity.Verbose,
 
                 // If you or another service needs to do anything with messages
                 // (eg. checking Reactions, checking the content of edited/deleted messages),
@@ -43,66 +47,41 @@ namespace LHJ.DiscordBot
 
         public async Task MainAsync()
         {
-            string token = "NDI4MDIzNTg3NzE1NDE2MDg0.DZuRkQ.pmhaNOIDJ1-1mg6wgUARLNHfFkk";
-
-            this._client.Log += Logger;
-
-            await this._client.LoginAsync(TokenType.Bot, token);
-            await this._client.StartAsync();
-
-            this._client.MessageReceived += MessageReceived;
-            this._client.Ready += Client_Ready;
-            this._client.GuildAvailable += Client_GuildAvailable;
-
-            await Task.Delay(-1); // 프로그램 종료시까지 태스크 유지  
-        }
-
-        private Task Client_GuildAvailable(SocketGuild arg)
-        {
-            //arg.Channels[0].SendMessageAsync("테스트 봇 시작!");
-            return Task.CompletedTask;
-        }
-
-        private Task Client_Ready()
-        {
-            //arg.Channels[0].SendMessageAsync("테스트 봇 시작!");
-            return Task.CompletedTask;
-        }
-
-        private async Task MessageReceived(SocketMessage message)
-        {
-            SocketUser user = message.Author;
-
-            if (user.IsBot)
+            if (Config.bot.token == "" || Config.bot.token == null)
             {
                 return;
             }
 
-            if (message.Content.Equals("Hello"))
-            {
-                await message.Channel.SendMessageAsync(string.Format("Hello {0}", user.Mention));
-            }
+            this._Commands = new CommandService();
+            this._Services = new ServiceCollection()
+                        .AddSingleton(this._Client)
+                        .AddSingleton(this._Commands)
+                        .BuildServiceProvider();
 
-            if (message.Content.Substring(0, 1).Equals("!"))
-            {
-                string command = message.Content.Replace("!", string.Empty);
-                string[] commandList = command.Split(' ');
+            this._Client.Log += Logger;
+            this._Client.Ready += RepeatingTimer.StartTimer;
+            this._Client.ReactionAdded += OnReactionAdded;
 
-                if (commandList.Length > 0)
+            this._CmdHandler = new CommandHandler();
+            await this._CmdHandler.InitializeAsync(this._Client);
+
+            await this._Client.LoginAsync(TokenType.Bot, Config.bot.token);
+            await this._Client.StartAsync();
+
+            Global.Client = this._Client;
+
+            await Task.Delay(-1); // 프로그램 종료시까지 태스크 유지  
+        }
+
+        private async Task OnReactionAdded(Cacheable<IUserMessage, ulong> cache, ISocketMessageChannel channel, SocketReaction reaction)
+        {
+            if (reaction.MessageId == Global.MessageIdToTrack)
+            {
+                if (reaction.Emote.Name == "👌")
                 {
-                    if (commandList[0].ToUpper().Equals("지우개") && commandList.Length.Equals(2))
+                    if (!reaction.User.Value.IsBot)
                     {
-                        int count;
-                        Int32.TryParse(commandList[1], out count);
-
-                        if (count < 1 || count > 100)
-                        {
-                            await message.Channel.SendMessageAsync("1에서 100 사이의 정수를 입력해야 합니다.");
-
-                            return;
-                        }
-
-                        await this.DelMessageAsync(message, count);
+                        await channel.SendMessageAsync(reaction.User.Value.Username + " Says 오키.");
                     }
                 }
             }
@@ -138,7 +117,11 @@ namespace LHJ.DiscordBot
             if (message.Severity.Equals(LogSeverity.Critical) || message.Severity.Equals(LogSeverity.Error) || message.Severity.Equals(LogSeverity.Warning))
             {
                 Console.WriteLine($"{DateTime.Now,-19} [{message.Severity,8}] {message.Source}: {message.Message}");
-                Console.WriteLine($"ERROR MESSAGE : {message.Exception.Message}");
+
+                if (message.Exception != null)
+                {
+                    Console.WriteLine($"ERROR MESSAGE : {message.Exception.Message}");
+                }
             }
             else
             {
