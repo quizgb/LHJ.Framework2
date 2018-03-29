@@ -66,6 +66,11 @@ namespace LHJ.DiscordBot
                 {
                     await msg.AddReactionAsync(new Emoji("👌"));
                 }
+
+                if (msg.Content.Equals("노랭이"))
+                {
+                    await msg.Channel.SendMessageAsync("효자네");
+                }
             }
         }
     }
