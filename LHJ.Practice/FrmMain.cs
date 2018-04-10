@@ -173,8 +173,13 @@ namespace LHJ.Practice
             }
             else if (btn.Equals(this.barBtnJson))
             {
-                FrmJson scnTextToSpeech = new FrmJson();
-                this.ShowFormORClose(scnTextToSpeech);
+                FrmJson json = new FrmJson();
+                this.ShowFormORClose(json);
+            }
+            else if (btn.Equals(this.barBtnXml))
+            {
+                FrmXml xml = new FrmXml();
+                this.ShowFormORClose(xml);
             }
         }
         #endregion 7.Event

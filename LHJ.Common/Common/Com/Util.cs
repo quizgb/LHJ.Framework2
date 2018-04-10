@@ -7,6 +7,8 @@ using System.Text;
 using Microsoft.Win32.TaskScheduler;
 using System.Net.NetworkInformation;
 using System.Drawing;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace LHJ.Common.Common.Com
 {
@@ -257,6 +259,58 @@ Shortcut.Save",
             Shell32.Shell shell = new Shell32.Shell();
             Shell32.Folder fontFolder = shell.NameSpace(0x14);
             fontFolder.CopyHere(aFontPath, 16);
+        }
+
+        /// <summary>
+        /// 클래스 -> XML Serialize
+        /// </summary>
+        /// <param name="pObject"></param>
+        /// <returns></returns>
+        public static string ToXML(Object pObject)
+        {
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            XmlSerializer objXMLSerializer = new XmlSerializer(pObject.GetType());
+            MemoryStream mem = new MemoryStream();
+
+            try
+            {
+                objXMLSerializer.Serialize(mem, pObject, ns);
+                mem.Position = 0;
+
+                StreamReader sreader = new StreamReader(mem, System.Text.Encoding.Default);
+                System.Text.StringBuilder strXML = new System.Text.StringBuilder();
+                strXML.Append(sreader.ReadToEnd());
+                sreader.Close();
+                mem.Close();
+                sreader = null;
+                return strXML.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                ns = null;
+                objXMLSerializer = null;
+                mem = null;
+            }
+        }
+
+        /// <summary>
+        /// XML -> 오브젝트 Deserialize
+        /// </summary>
+        /// <param name="pXMLString"></param>
+        /// <param name="pType"></param>
+        /// <returns></returns>
+        public static Object XMLToObject(string pXMLString, Type pType)
+        {
+            XmlReader reader = XmlTextReader.Create(new StringReader(pXMLString));
+            XmlSerializer xmlSerializer = new XmlSerializer(pType);
+            Object result = xmlSerializer.Deserialize(reader);
+            reader.Close();
+
+            return result;
         }
         #endregion 6.Method
 

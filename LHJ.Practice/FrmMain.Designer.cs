@@ -39,6 +39,7 @@
             this.barBtnTextToSpeech = new System.Windows.Forms.RibbonButton();
             this.barBtnColorSpoid = new System.Windows.Forms.RibbonButton();
             this.barBtnJson = new System.Windows.Forms.RibbonButton();
+            this.barBtnXml = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -59,7 +60,7 @@
             this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2010;
             this.ribbon1.OrbVisible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.ribbon1.Size = new System.Drawing.Size(678, 172);
+            this.ribbon1.Size = new System.Drawing.Size(1266, 172);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.TabsMargin = new System.Windows.Forms.Padding(12, 26, 20, 0);
@@ -80,6 +81,7 @@
             this.ribbonPanel1.Items.Add(this.barBtnTextToSpeech);
             this.ribbonPanel1.Items.Add(this.barBtnColorSpoid);
             this.ribbonPanel1.Items.Add(this.barBtnJson);
+            this.ribbonPanel1.Items.Add(this.barBtnXml);
             this.ribbonPanel1.Text = "프로그램 리스트";
             // 
             // barBtnShowDataGridView
@@ -135,11 +137,18 @@
             this.barBtnJson.Text = "Json";
             this.barBtnJson.Click += new System.EventHandler(this.barBtnShowDataGridView_Click);
             // 
+            // barBtnXml
+            // 
+            this.barBtnXml.Image = ((System.Drawing.Image)(resources.GetObject("barBtnXml.Image")));
+            this.barBtnXml.SmallImage = ((System.Drawing.Image)(resources.GetObject("barBtnXml.SmallImage")));
+            this.barBtnXml.Text = "Xml";
+            this.barBtnXml.Click += new System.EventHandler(this.barBtnShowDataGridView_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 483);
+            this.ClientSize = new System.Drawing.Size(1266, 1010);
             this.Controls.Add(this.ribbon1);
             this.IsMdiContainer = true;
             this.Name = "FrmMain";
@@ -161,5 +170,6 @@
         private System.Windows.Forms.RibbonButton barBtnTextToSpeech;
         private System.Windows.Forms.RibbonButton barBtnColorSpoid;
         private System.Windows.Forms.RibbonButton barBtnJson;
+        private System.Windows.Forms.RibbonButton barBtnXml;
     }
 }
