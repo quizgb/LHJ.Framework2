@@ -312,6 +312,31 @@ Shortcut.Save",
 
             return result;
         }
+
+        public static Encoding DetectTextFileEncoding(string pFilePath)
+        {
+            Encoding rtnEnc;
+            byte[] tempByte = null;
+            TextEncodingDetect ted = new TextEncodingDetect();
+            TextEncodingDetect.Encoding tedEnc;
+
+            tempByte = File.ReadAllBytes(pFilePath);
+            tedEnc = ted.DetectEncoding(tempByte, tempByte.Length);
+
+            switch (tedEnc)
+            {
+                case TextEncodingDetect.Encoding.Utf8Bom:
+                case TextEncodingDetect.Encoding.Utf8Nobom:
+                    rtnEnc = Encoding.UTF8;
+                    break;
+
+                default:
+                    rtnEnc = Encoding.Default;
+                    break;
+            }
+
+            return rtnEnc;
+        }
         #endregion 6.Method
 
 

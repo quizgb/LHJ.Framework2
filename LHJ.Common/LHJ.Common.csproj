@@ -141,6 +141,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TextEncodingDetect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Control\LoadingControl\Block.xaml">
