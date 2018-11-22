@@ -202,18 +202,18 @@ namespace LHJ.NaverTTSTranslation
 
             if (this.rbtnNmt.Checked)
             {
-                url = "https://openapi.naver.com/v1/papago/n2mt";
+                url = "https://naveropenapi.apigw.ntruss.com/nmt/v1/translation";
             }
             else
             {
-                url = "https://openapi.naver.com/v1/language/translate";
+                url = "https://naveropenapi.apigw.ntruss.com/smt/v1/translation";
             }
 
             string text = string.Empty;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", Definition.ConstValue.ConstValue.NaverClintInfo.ID);
-            request.Headers.Add("X-Naver-Client-Secret", Definition.ConstValue.ConstValue.NaverClintInfo.PASS);
+            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", Definition.ConstValue.ConstValue.NaverCloudClintInfo.ID);
+            request.Headers.Add("X-NCP-APIGW-API-KEY", Definition.ConstValue.ConstValue.NaverCloudClintInfo.PASS);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
@@ -242,11 +242,12 @@ namespace LHJ.NaverTTSTranslation
 
         private void TTS(string aSpeacker, int aSpeed, string aText)
         {
-            string url = "https://openapi.naver.com/v1/voice/tts.bin";
+            string url = "https://naveropenapi.apigw.ntruss.com/voice/v1/tts";
+            string filePath = @"C:\tts.mp3";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Headers.Add("X-Naver-Client-Id", Definition.ConstValue.ConstValue.NaverClintInfo.ID);
-            request.Headers.Add("X-Naver-Client-Secret", Definition.ConstValue.ConstValue.NaverClintInfo.PASS);
+            request.Headers.Add("X-NCP-APIGW-API-KEY-ID", Definition.ConstValue.ConstValue.NaverCloudClintInfo.ID);
+            request.Headers.Add("X-NCP-APIGW-API-KEY", Definition.ConstValue.ConstValue.NaverCloudClintInfo.PASS);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
 
@@ -259,32 +260,24 @@ namespace LHJ.NaverTTSTranslation
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-                using (Stream ms = new MemoryStream())
+                using (Stream output = File.OpenWrite(filePath))
                 {
-                    using (Stream stream = response.GetResponseStream())
+                    using (Stream input = response.GetResponseStream())
                     {
-                        byte[] buffer = new byte[32768];
-                        int read;
-
-                        while ((read = stream.Read(buffer, 0, buffer.Length)) > 0)
-                        {
-                            ms.Write(buffer, 0, read);
-                        }
+                        input.CopyTo(output);
                     }
+                }
 
-                    ms.Position = 0;
-
-                    using (WaveStream blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(ms))))
+                using (WaveStream blockAlignedStream = new BlockAlignReductionStream(WaveFormatConversionStream.CreatePcmStream(new Mp3FileReader(filePath))))
+                {
+                    using (WaveOut waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
                     {
-                        using (WaveOut waveOut = new WaveOut(WaveCallbackInfo.FunctionCallback()))
-                        {
-                            waveOut.Init(blockAlignedStream);
-                            waveOut.Play();
+                        waveOut.Init(blockAlignedStream);
+                        waveOut.Play();
 
-                            while (waveOut.PlaybackState == PlaybackState.Playing)
-                            {
-                                System.Threading.Thread.Sleep(100);
-                            }
+                        while (waveOut.PlaybackState == PlaybackState.Playing)
+                        {
+                            System.Threading.Thread.Sleep(100);
                         }
                     }
                 }

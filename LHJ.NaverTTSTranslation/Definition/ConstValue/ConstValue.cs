@@ -8,10 +8,10 @@ namespace LHJ.NaverTTSTranslation.Definition.ConstValue
 {
     public class ConstValue
     {
-        public struct NaverClintInfo
+        public struct NaverCloudClintInfo
         {
-            public const string ID = "LtZtd8UjmufzEAi37KdB";
-            public const string PASS = "v7hwdxjn0m";
+            public const string ID = "4t577s67vd";
+            public const string PASS = "sAY1PNjhtkwU4grbCJbEgrzBgvAzZZKaBv5ObUHR";
         }
     }
 }
