@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.ProcessManager", "LHJ.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.NaverSTT", "LHJ.NaverSTT\LHJ.NaverSTT.csproj", "{8A3E56E9-A717-49AD-8B08-69223FDB7FDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHJ.Wpf", "LHJ.Wpf\LHJ.Wpf.csproj", "{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -252,6 +254,18 @@ Global
 		{8A3E56E9-A717-49AD-8B08-69223FDB7FDE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8A3E56E9-A717-49AD-8B08-69223FDB7FDE}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A3E56E9-A717-49AD-8B08-69223FDB7FDE}.Release|x86.Build.0 = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Debug|x86.Build.0 = Debug|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|x86.ActiveCfg = Release|Any CPU
+		{6E2394D0-6EFE-45CC-B6DE-71E6B73AAABC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

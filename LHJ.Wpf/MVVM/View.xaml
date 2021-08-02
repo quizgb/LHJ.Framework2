@@ -1,0 +1,32 @@
+﻿<Window x:Class="LHJ.Wpf.MVVM.View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LHJ.Wpf.MVVM"
+        xmlns:cvt="clr-namespace:LHJ.Wpf.MVVM.CVT"
+        xmlns:vm="clr-namespace:LHJ.Wpf.MVVM.ViewModels"
+        mc:Ignorable="d"
+        Title="MVVM View" Height="500" Width="500" Background="White" Foreground="White">
+    <Window.Resources>
+        <cvt:LHJConverter x:Key="LHJConverter"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:ViewModel/>
+    </Window.DataContext>
+    <Grid Background="{Binding Path = LHJ, Converter={StaticResource ResourceKey=LHJConverter}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Name="tbModel1" Padding="10"
+                 Text="{Binding Path=ModelName, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <Label Grid.Row="1" Grid.Column="1" Content="{Binding Path=ModelName, Mode=TwoWay}"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
