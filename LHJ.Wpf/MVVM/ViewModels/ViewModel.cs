@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace LHJ.Wpf.MVVM.ViewModels
 {
@@ -23,17 +25,30 @@ namespace LHJ.Wpf.MVVM.ViewModels
             get { return this._Model1.ModelName; }
             set
             {
-                this._Model1.ModelName = value;
-                this.NotiPropertyChanged("ModelName");
+                if (this._Model1.ModelName != value)
+                {
+                    this._Model1.ModelName = value;
+                    this.NotiPropertyChanged("ModelName");
 
-                if (this._Model1.ModelName.Equals("이호준") || this._Model1.ModelName.Equals("LHJ"))
-                {
-                    this.LHJ = true;
+                    if (this._Model1.ModelName.Equals("이호준") || this._Model1.ModelName.Equals("LHJ"))
+                    {
+                        this.LHJ = true;
+                    }
+                    else
+                    {
+                        this.LHJ = false;
+                    }
                 }
-                else
-                {
-                    this.LHJ = false;
-                }
+            }
+        }
+
+        public string ModelName2
+        {
+            get { return this._Model1.ModelName2; }
+            set
+            {
+                this._Model1.ModelName2 = value;
+                this.NotiPropertyChanged("ModelName2");
             }
         }
 
@@ -51,6 +66,25 @@ namespace LHJ.Wpf.MVVM.ViewModels
         {
             this._Model1 = new Models.Model1();
         }
+
+        private void ButtonCmdExe(object pParam)
+        {
+            MessageBox.Show("버튼 클릭");
+        }
+
+        private bool CanButtonCmdExe(object pParam)
+        {
+            if (!string.IsNullOrEmpty(this._Model1.ModelName2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public ICommand ButtonCmd { get { return new MVVM.CMD.RelayCommand(ButtonCmdExe, CanButtonCmdExe); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
